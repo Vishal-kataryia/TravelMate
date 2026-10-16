@@ -32,7 +32,7 @@ export default function Login() {
   }
 
   return (
-    <div className="container page" style={{ maxWidth: 860 }}>
+    <div className="container page" style={{ maxWidth: 1040 }}>
       <div className="card auth-split">
         <img src={IMAGES.coupleMap} alt="Travelers planning journey" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         <div className="auth-split-body">

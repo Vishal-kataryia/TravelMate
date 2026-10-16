@@ -41,7 +41,7 @@ export default function Search() {
         {travels.map((t, i) => (
           <div key={t._id} className="card" style={{ paddingTop: 0, paddingLeft: 0, paddingRight: 0, overflow: 'hidden' }}>
             <img src={imageForPlace(t.destination || destination)} alt={`${t.source} to ${t.destination}`} loading="lazy" className="card-img" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-            <div style={{ padding: '16px 20px 20px' }}>
+            <div className="journey-card-body">
             <h3>{t.source} → {t.destination}</h3>
             <p className="muted">{new Date(t.travelDate).toDateString()} · ₹{t.price} · {t.availableSeats} seats left</p>
             <Link to="/book" className="btn btn-ghost">Book this route</Link>

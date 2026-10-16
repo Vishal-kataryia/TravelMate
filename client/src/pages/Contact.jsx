@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="container page" style={{ maxWidth: 620 }}>
+    <div className="container page" style={{ maxWidth: 960 }}>
       <div className="page-banner" style={{ minHeight: 180 }}>
         <img src={IMAGES.lakeCanoe} alt="Calm lake with canoe" loading="lazy" />
         <div className="page-banner-overlay" />

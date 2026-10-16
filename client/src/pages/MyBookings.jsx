@@ -49,8 +49,8 @@ export default function MyBookings() {
         {bookings.map((b) => (
           <div key={b._id} className="card" style={{ paddingTop: 0, paddingLeft: 0, paddingRight: 0, overflow: 'hidden' }}>
             <img src={imageForPlace(b.travelId?.destination)} alt={`${b.travelId?.source} to ${b.travelId?.destination}`} loading="lazy" className="card-img" style={{ height: 150 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-            <div style={{ padding: '16px 20px 20px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className="journey-card-body">
+            <div className="booking-top">
               <strong>{b.bookingId}</strong>
               <span className={`badge ${b.bookingStatus === 'Confirmed' ? 'badge-green' : 'badge-orange'}`}>{b.bookingStatus}</span>
             </div>
@@ -59,7 +59,7 @@ export default function MyBookings() {
               <span className="muted">{b.travelId?.travelDate ? new Date(b.travelId.travelDate).toDateString() : '-'} · Seat {b.seatNumber} · ₹{b.price}</span><br />
               Matched traveler: {b.matchedTravelerName || '-'}
             </p>
-            <div style={{ display: 'flex', gap: 10 }}>
+            <div className="booking-actions">
               <Link to={`/booking-success/${b._id}`} className="btn btn-ghost">View</Link>
               {b.bookingStatus === 'Confirmed' && (
                 <button className="btn btn-orange" onClick={() => cancel(b._id)}>Cancel</button>

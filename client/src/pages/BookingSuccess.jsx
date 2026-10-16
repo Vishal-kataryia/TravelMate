@@ -34,7 +34,7 @@ export default function BookingSuccess() {
       <div className="card" style={{ textAlign: 'center' }}>
         <img src={IMAGES.friendsBeach} alt="Happy travelers" loading="lazy" style={{ width: '100%', maxHeight: 260, objectFit: 'cover', borderRadius: 14, marginBottom: 16 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         <h2 style={{ marginTop: 0 }}>Booking details</h2>
-        <div style={{ textAlign: 'left', maxWidth: 520, margin: '0 auto' }}>
+        <div className="booking-details">
           <p><strong>Booking ID:</strong> {booking.bookingId}</p>
           <p><strong>Passenger Name:</strong> {booking.userId?.name}</p>
           <p><strong>Source:</strong> {t.source}</p>
@@ -47,7 +47,7 @@ export default function BookingSuccess() {
           <p><strong>Ticket Price:</strong> ₹{booking.price}</p>
           <p><strong>Booking Status:</strong> <span className="badge badge-green">{booking.bookingStatus}</span></p>
         </div>
-        <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 18, flexWrap: 'wrap' }}>
+        <div className="success-actions">
           <Link to="/my-bookings" className="btn btn-primary">View My Bookings</Link>
           <Link to="/" className="btn btn-ghost">Back to Home</Link>
         </div>

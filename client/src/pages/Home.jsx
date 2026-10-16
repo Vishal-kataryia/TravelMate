@@ -115,7 +115,7 @@ export default function Home() {
         <p className="muted">A glimpse of journeys made with TravelMate.</p>
         <div className="grid grid-3" style={{ marginTop: 12 }}>
           {[IMAGES.roadTrip, IMAGES.beach, IMAGES.mountains].map((src, i) => (
-            <img key={i} src={src} alt={`Travel moment ${i + 1}`} loading="lazy" style={{ width: '100%', height: 190, objectFit: 'cover', borderRadius: 16 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+            <img key={i} src={src} alt={`Travel moment ${i + 1}`} loading="lazy" className="moment-img" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
           ))}
         </div>
       </section>

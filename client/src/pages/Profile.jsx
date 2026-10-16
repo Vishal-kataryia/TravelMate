@@ -33,7 +33,7 @@ export default function Profile() {
   if (!user) return <div className="container page"><p>Loading profile...</p></div>;
 
   return (
-    <div className="container page" style={{ maxWidth: 600 }}>
+    <div className="container page" style={{ maxWidth: 760 }}>
       <div className="page-banner" style={{ minHeight: 170 }}>
         <img src={IMAGES.backpack} alt="Traveler profile" loading="lazy" />
         <div className="page-banner-overlay" />

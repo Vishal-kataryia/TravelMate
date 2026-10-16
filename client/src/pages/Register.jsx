@@ -49,7 +49,7 @@ export default function Register() {
   }
 
   return (
-    <div className="container page" style={{ maxWidth: 900 }}>
+    <div className="container page" style={{ maxWidth: 1100 }}>
       <div className="card auth-split">
         <img src={IMAGES.hiker} alt="Traveler in mountains" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         <div className="auth-split-body">

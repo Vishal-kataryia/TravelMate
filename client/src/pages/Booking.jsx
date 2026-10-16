@@ -136,6 +136,7 @@ export default function Booking() {
             <span>⬜ Available</span><span>🟦 Selected ({seat || 'none'})</span><span>⬛ Booked</span>
           </div>
           <div style={{ textAlign: 'center', fontWeight: 800, marginBottom: 10 }}>DRIVER</div>
+          <div className="seat-scroll">
           <div className="seat-map">
             {Array.from({ length: rows }).map((_, r) => {
               const seats = [left[r * 2], left[r * 2 + 1], right[r * 2], right[r * 2 + 1]].filter(Boolean);
@@ -155,6 +156,7 @@ export default function Booking() {
                 </div>
               );
             })}
+          </div>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export const IMAGES = {
   tajMahal: u('photo-1524492412937-b28074a5d7da'), // India Taj Mahal
   beach: u('photo-1507525428034-b723cf961d3e'), // tropical beach
   goaBeach: u('photo-1512343879784-a960bf40e7f2'), // Goa palm beach
-  hiker: u('photo-1503220317375-aaad61436b2b'), // traveler in mountains
+  hiker: u('photo-1551632811-561732d1e306'), // hikers trekking on a mountain trail
   coupleMap: u('photo-1530789253388-582c481c54b0'), // couple planning trip
   backpack: u('photo-1526772662000-3f88f10405ff'), // backpacker viewpoint
   friendsBeach: u('photo-1530521954074-e64f6810b32d'), // friends on beach

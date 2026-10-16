@@ -99,7 +99,7 @@ export default function Book() {
           <img src={JAIPUR_PEXELS.hawaMahal} alt="Delhi to Jaipur journey — Hawa Mahal" loading="lazy" className="card-img" style={{ height: 220 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
           <span className="badge badge-green" style={{ position: 'absolute', top: 12, left: 12 }}>Available</span>
         </div>
-        <div style={{ padding: '16px 20px 20px', display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ padding: '16px 20px 20px' }} className="journey-feature-row">
           <div>
             <h3 style={{ margin: '0 0 4px' }}>Delhi → Jaipur</h3>
             <p className="muted" style={{ margin: 0 }}>From: Delhi · To: Jaipur · Departure: Delhi · Destination: Jaipur · Route: Delhi → Jaipur · Status: Available</p>
@@ -116,7 +116,7 @@ export default function Book() {
               <img src={imageForPlace(j.destination)} alt={`${j.source} to ${j.destination}`} loading="lazy" className="card-img" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
               <span className="badge badge-blue" style={{ position: 'absolute', top: 12, left: 12 }}>{j.availableSeats} seats left</span>
             </div>
-            <div style={{ padding: '16px 20px 20px' }}>
+            <div className="journey-card-body">
             <h3>{j.source} → {j.destination}</h3>
             <p className="muted">{new Date(j.travelDate).toDateString()} · {j.departureTime} · ₹{j.price}</p>
             <button className="btn btn-ghost" onClick={() => navigate(`/matching?source=${j.source}&destination=${j.destination}&travelDate=${new Date(j.travelDate).toISOString().slice(0, 10)}&passengers=1&foodPreference=${form.foodPreference}&seatPreference=${form.seatPreference}`)}>

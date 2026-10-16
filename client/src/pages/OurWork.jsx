@@ -20,7 +20,7 @@ export default function OurWork() {
         {WORK.map((w, i) => (
           <div key={w.title} className="card" style={{ padding: 0, overflow: 'hidden' }}>
             <img src={imageForIndex(i + 1)} alt={w.title} loading="lazy" className="card-img" style={{ height: 180 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-            <div style={{ padding: 18 }}>
+            <div className="journey-card-body">
               <h3 style={{ margin: '0 0 6px' }}>{w.title}</h3>
               <p className="muted" style={{ margin: 0 }}>{w.desc}</p>
             </div>

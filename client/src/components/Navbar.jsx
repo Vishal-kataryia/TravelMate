@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -14,6 +14,21 @@ export default function Navbar() {
     setOpen(false);
     navigate('/');
   }
+
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Escape') setOpen(false);
+    }
+    function onResize() {
+      if (window.innerWidth > 900) setOpen(false);
+    }
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
 
   const links = [
     { to: '/', label: 'Home' },
@@ -52,11 +67,11 @@ export default function Navbar() {
             </>
           )}
         </div>
-        <button className="hamburger" aria-label="Toggle menu" onClick={() => setOpen(!open)}>
+        <button className="hamburger" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
-      <div className={`mobile-menu ${open ? 'open' : ''}`}>
+      <div id="mobile-menu" className={`mobile-menu ${open ? 'open' : ''}`}>
         {links.map((l) => (
           <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>
         ))}

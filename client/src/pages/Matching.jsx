@@ -104,11 +104,11 @@ export default function Matching() {
         {matches.map((m, i) => (
           <div key={i} className="card" style={{ paddingTop: 0, paddingLeft: 0, paddingRight: 0, overflow: 'hidden' }}>
             <img src={imageForIndex(i + 3)} alt={`${m.traveler.name} traveler`} loading="lazy" className="card-img" style={{ height: 150 }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-            <div style={{ padding: '16px 20px 20px' }}>
+            <div className="journey-card-body">
             <h3 style={{ margin: '0 0 4px' }}>{m.traveler.name}</h3>
             <p className="muted" style={{ margin: 0 }}>{m.travel.source} → {m.travel.destination}<br />{fmtDate(m.travel.travelDate)} · {m.travel.departureTime}</p>
             <p style={{ margin: '8px 0' }}>{m.traveler.foodPreference} · {m.traveler.seatPreference}</p>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800 }}>
+            <div className="match-meta">
               <span>{m.matchPercentage}% Match</span>
               <span className="muted">₹{m.travel.price}</span>
             </div>
