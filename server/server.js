@@ -13,7 +13,17 @@ const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+// Allow the configured client URL plus any localhost/127.0.0.1 dev port.
+// Vite automatically falls back to 5174/5175 when 5173 is busy, so a fixed
+// origin would otherwise block API requests during local development.
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin) return callback(null, true);
+    const isLocalDev = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+    return callback(null, origin === CLIENT_URL || isLocalDev);
+  }
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => res.json({ message: 'TravelMate API running' }));
